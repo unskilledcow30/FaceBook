@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,600;1,700&family=Prata&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}   
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 20px;
+    width: 400px;
+    height: 300px;
+    border: 2px solid violet;
+    border-radius: 20px;
+}
+
+form .error{
+    color: red;
+    padding: 4px;
+}
+form .input-region{
+    width: 100%;
+    height: 40px;
+    margin: 15px 0;
+    border: none;
+    
+    position: relative;
+    z-index: 1;
+}
+form .input-region input{
+    border: none;
+    width: 100%;
+    height: 100%;
+    background: none;
+    outline: none;
+    border-bottom: 1.5px solid violet;
+    
+}
+form .input-region label{
+    position: absolute;
+    left: 3%;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+}
+
+.input-region input:focus~label, .input-region input:valid~label{
+    top: -5%;
+    font-size: 0.9em;
+    color: violet;  
+}
+.input-region input:focus, .input-region input:valid{
+    border-bottom: 2px solid rgb(242, 100, 242);
+}
+
+form .submit, .slider-section .dir{
+    background: transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    color: white;
+    height: 35px;
+    border-radius: 15px;
+    font-size: 16px;
+    padding: 5px 8px;
+    font-weight: bold;
+    border: none;
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s, color 0.15s, border 0.3s;
+}
+
+form .submit::before, .slider-section .dir::before{
+    content: '';
+    width: 300%;
+    position: absolute;
+    height:102%;
+    background: linear-gradient(30deg, rgb(242, 100, 242), rgb(76, 76, 239), rgb(242, 100, 242), rgb(76, 76, 239));
+    right: -100%;
+    bottom: 0;
+    transition: all 0.3s;
+    z-index: -1 ;
+
+}
+
+form .submit:hover::before, .slider-section .dir:hover::before{
+    right: 0;
+    color: white;
+    border: none;
+}
+form p{
+    font-size: 0.9em;
+}
+
+form p a{
+    text-decoration: none ;
+    color: rgb(245, 100, 242);
+}
+form p a:hover{
+    text-decoration: underline;
+}
